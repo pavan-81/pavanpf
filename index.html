@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan Thakuri - Portfolio</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            color: #333;
+            background: #87CEEB; /* Sky blue background */
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            left: -250px;
+            top: 0;
+            background-color: #34495e;
+            overflow-x: hidden;
+            transition: left 0.5s;
+            z-index: 5;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1c40f;
+        }
+
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin-left .5s;
+        }
+
+        #animatedHeading {
+            font-size: 2em;
+            color: #2c3e50;
+            animation: typing 3.5s steps(40, end);
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        header, section, footer {
+            background: #ecf0f1;
+            margin: 8px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            background: #2c3e50;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="mySidebar">
+        <nav>
+            <a href="#about" onclick="closeNav()">About</a>
+            <a href="#education" onclick="closeNav()">Education</a>
+            <a href="#skills" onclick="closeNav()">Skills</a>
+            <a href="#experience" onclick="closeNav()">Experience</a>
+            <a href="#projects" onclick="closeNav()">Certifications</a>
+            <a href="#contact" onclick="closeNav()">Contact</a>
+        </nav>
+    </div>
+    <div class="main-content" id="mainContent">
+        <header>
+            <h1 id="animatedHeading"></h1>
+            <p>PERSISTENT</p>
+        </header>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am Pavan Thakuri, a pre-final year student at BVRIT Narsapur pursuing a Bachelor of Technology in Information Technology. With a strong academic record, boasting a CGPA of 8.1/10, I am deeply invested in leveraging modern technologies to drive innovations and solutions. My technical proficiency spans essential programming languages like Java and Python, with a focused interest in machine learning and database management using MySQL.
+
+                Throughout my academic journey, I have consistently sought out practical experiences to complement my studies. This includes a significant stint as an intern in the Google AI-ML Virtual Internship program, where I gained firsthand experience with artificial intelligence and machine learning technologies. I have also engaged in extensive coursework that includes data structures, algorithms, database management systems, computer networks, and operating systems.
+                
+                Beyond my technical capabilities, I actively participate in extracurricular activities like chess, which has honed my strategic thinking and problem-solving skills. My participation in the Navodaya Chess Tournament Nationals highlights my ability to balance and excel in both academic and extracurricular commitments.
+                
+                I am always eager to connect with professionals and peers alike to learn and share knowledge in the field of Information Technology. You can connect with me through my LinkedIn or explore my coding projects and challenges on platforms like HackerRank, LeetCode, and CodeChef.</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>B.Tech in IT, BVRIT Narsapur, CGPA: 8.1/10</li>
+                <li>Intermediate, Sri Chaitanya Junior College, 95%</li>
+                <li>High School, Jawahar Navodaya Vidyalaya, 85%</li>
+            </ul>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>MySQL</li>
+                <li>GitHub</li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <p>Completed an AI-ML Virtual Internship with Google, offered through AICTE, focusing on practical applications of artificial intelligence and machine learning.</p>
+        </section>
+        <section id="projects">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Data Science with Python</li>
+                <li>Java Basics Course Completion</li>
+                <li>C Programming Problem Solving</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:21211a12b9@bvrit.ac.in">21211a12b9@bvrit.ac.in</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/pavan-patel-52803b250/">Profile on LinkedIn</a></p>
+        </section>
+        <footer>
+            <p>© 2024 Pavan Thakuri. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+        const sidebar = document.getElementById('mySidebar');
+        const mainContent = document.getElementById('mainContent');
+        sidebar.addEventListener('mouseover', function() {
+            this.style.left = '0';
+            mainContent.style.marginLeft = '250px';
+        });
+        sidebar.addEventListener('mouseout', function() {
+            this.style.left = '-250px';
+            mainContent.style.marginLeft = '0';
+        });
+
+        // Header text animation
+        const text = "Pavan Thakuri";
+        let i = 0;
+        const speed = 150;
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById('animatedHeading').innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+        setTimeout(typeEffect, 1000);  // Start animation after 1 second
+    </script>
+</body>
+</html>
